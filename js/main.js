@@ -1,16 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("Portfólio carregado com sucesso!");
-
-    if(
-    document.body.classList.contains(
-        "light-theme"
-    )
-){
-    themeButton.textContent = "☀️";
-}
-
-});
 
 const skills = [
     "C#",
@@ -53,12 +41,12 @@ const projects = [
         "Projeto para gerenciamento de atividades educacionais.",
 
         technologies: [
-            "C#",
-            "SQLite"
+            "React Native",
+            "Typescript",
         ],
 
         github:
-        "https://github.com/seuusuario/aulasocial"
+        "https://github.com/MANSJR13/AulaSocial"
     }
 
 ];
@@ -208,15 +196,57 @@ themeButton.addEventListener(
     toggleTheme
 );
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-        renderSkills();
+    if(document.body.classList.contains("light-theme")){
+        themeButton.textContent = "☀️";
+    }
 
-        renderProjects();
+    renderSkills();
+    renderProjects();
+    renderCertificates();
 
-        renderCertificates();
+    console.log("Portfólio carregado com sucesso!");
+
+});
+
+const menuButton =
+    document.getElementById("menu-toggle");
+
+const menu =
+    document.querySelector(".menu");
+
+    menuButton.addEventListener("click", () => {
+
+    menu.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+
+        menuButton.textContent = "✕";
+
+    }else{
+
+        menuButton.textContent = "☰";
 
     }
-);
+
+});
+
+document
+.querySelectorAll(".menu a")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        menu.classList.remove("active");
+
+        menuButton.textContent = "☰";
+
+    });
+
+});
+
+menuButton.textContent =
+    menu.classList.contains("active")
+    ? "✖"
+    : "☰";

@@ -1,17 +1,47 @@
-@media(max-width:768px){
+@media (max-width:768px){
 
     .header .container{
-        flex-direction:column;
-        gap:20px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        position:relative;
+    }
+
+    nav{
+        width:auto;
+        order:initial;
+    }
+
+    .hamburger{
+        display:block;
     }
 
     .menu{
-        flex-wrap:wrap;
-        justify-content:center;
+
+        display:none;
+
+        position:absolute;
+
+        top:70px;
+        right:0;
+
+        width:250px;
+
+        flex-direction:column;
+
+        background:var(--surface);
+
+        padding:20px;
+
+        border-radius:12px;
+
+        box-shadow:var(--shadow);
+
+        z-index:999;
     }
 
-    .hero h1{
-        font-size:2rem;
+    .menu.active{
+        display:flex;
     }
 
 }
