@@ -2,6 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Portfólio carregado com sucesso!");
 
+    if(
+    document.body.classList.contains(
+        "light-theme"
+    )
+){
+    themeButton.textContent = "☀️";
+}
+
 });
 
 const skills = [
@@ -86,6 +94,19 @@ function renderSkills() {
     });
 }
 
+const themeButton =
+    document.getElementById("theme-toggle");
+
+    const savedTheme =
+    localStorage.getItem("theme");
+
+if(savedTheme === "light"){
+
+    document.body.classList.add(
+        "light-theme"
+    );
+}
+
 function renderProjects() {
 
     const container =
@@ -161,6 +182,31 @@ function renderCertificates() {
         `;
     });
 }
+
+function toggleTheme() {
+
+    document.body.classList.toggle(
+        "light-theme"
+    );
+
+    const isLight =
+        document.body.classList.contains(
+            "light-theme"
+        );
+
+    themeButton.textContent =
+        isLight ? "☀️" : "🌙";
+
+    localStorage.setItem(
+        "theme",
+        isLight ? "light" : "dark"
+    );
+}
+
+themeButton.addEventListener(
+    "click",
+    toggleTheme
+);
 
 document.addEventListener(
     "DOMContentLoaded",
