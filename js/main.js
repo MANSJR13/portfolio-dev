@@ -183,7 +183,7 @@ function toggleTheme() {
         );
 
     themeButton.textContent =
-        isLight ? "☀️" : "🌙";
+        isLight ? "🌙" : "☀️";
 
     localStorage.setItem(
         "theme",

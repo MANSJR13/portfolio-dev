@@ -266,3 +266,14 @@ nav{
     display:flex;
     justify-content:center;
 }
+
+.btn-cv{
+
+    background:#16a34a;
+
+    color:white;
+}
+.btn-cv:hover{
+
+    transform:translateY(-3px);
+}
