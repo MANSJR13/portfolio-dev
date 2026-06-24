@@ -47,7 +47,27 @@ const projects = [
 
         github:
         "https://github.com/MANSJR13/AulaSocial"
+    },
+
+     {
+        title: "API Produtos",
+
+        image:
+        "./assets/images/projetos/apiprodutos.png",
+
+        description:
+        "API de estudo, criada no Visual Studio, para obter conhecimento em APIs REST.",
+
+        technologies: [
+            "C#",
+            "APi rest",
+            "Sql lite",
+        ],
+
+        github:
+        "https://github.com/MANSJR13/ApiProdutosl"
     }
+
 
 ];
 
